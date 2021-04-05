@@ -5,45 +5,71 @@
   <meta charset="utf-8">
   <title>About me</title>
   <style type="text/css">
-  .box{
-    position: absolute ;right: 0px;top: 0px;
-    width: 100px;height: 100px;background-color: goldenrod;
+    body{
+      font-family: sans-serif;
+      margin:20px 40px;
+    }
+    #mainbox{
+      font-size: 24px;
+      cursor: pointer;
+      transition: all .6s; 
+    }
+    .sidemenu{
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      height: 100%;
+      width: 0px;
+      background-color: #222;
+      z-index: 1;
+      padding-top: 100px ;
+      overflow-x: hidden;
+      transition: all .5s;
+    }
+    .sidemenu a{
+      padding:8px 8px 8px 64px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #999;
+      display: block;
+    }
+    .sidemenu a:hover{
+      color:white;
+    } 
+    .sidemenu .closebtn{
+      position: absolute;
+      top:0px;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 32px;
+    }
+    .box{
+      position: absolute ;right: 0px;top: 0px;
+      width: 100px;height: 100px;background-color: goldenrod;
     }
   </style>  
 </head>
 <body>
-  <!-- Sidebar -->
-<div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
-  <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
-  <a href="#" class="w3-bar-item w3-button">Link 1</a>
-  <a href="#" class="w3-bar-item w3-button">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button">Link 3</a>
-</div>
-
-<!-- Page Content -->
-<div class="w3-teal">
-  <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
-  <div class="w3-container">
-    <h1>My Page</h1>
+  <div id="mainbox" onclick="openFunction()">&#9776; Open</div>
+  <div id="menu" class="sidemenu">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Login</a>
+    <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
   </div>
-</div>
-<script>
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-}
-
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
+  <script type="text/javascript">
+    function openFunction(){
+      document.getElementById("menu").style.width="300px";
+      document.getElementById("mainbox").style.marginLeft="300px";
+      document.getElementById("mainbox").innerHTML="Click on Cross Element and Close menu";
+    }
+    function closeFunction(){
+      document.getElementById("menu").style.width="0px";
+      document.getElementById("mainbox").style.marginLeft="0px";
+      document.getElementById("mainbox").innerHTML="&#9776; open";
+    }
 </script>
-
-
-
-  <nav class='sidebar-nav'>
-    <a class="sidebar-nav-item active" href="https://6987698766.github.io/">Home</a>
-    <a class="sidebar-nav-item active" href="https://6987698766.github.io/leetcode">Leetcode</a>
-  </nav>
-  </div>
   <div class="box"></div>
   <img src="img/head.jpeg" alt='頭貼' width="700" height="400"></img>
   <h4>Huang yu ting</h4>
