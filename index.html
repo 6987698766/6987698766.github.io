@@ -1,82 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <h1><span style="color:red">Hello</span></h1>
-  <meta charset="utf-8">
-  <title>About me</title>
-  <style type="text/css">
-    body{
-      font-family: sans-serif;
-      margin:20px 40px;
-    }
-    #mainbox{
-      font-size: 24px;
-      cursor: pointer;
-      transition: all .6s; 
-    }
-    .sidemenu{
-      position: fixed;
-      top: 0px;
-      left: 0px;
-      height: 100%;
-      width: 0px;
-      background-color: #222;
-      z-index: 1;
-      padding-top: 100px ;
-      overflow-x: hidden;
-      transition: all .5s;
-    }
-    .sidemenu a{
-      padding:8px 8px 8px 64px;
-      text-decoration: none;
-      font-size: 20px;
-      color: #999;
-      display: block;
-    }
-    .sidemenu a:hover{
-      color:white;
-    } 
-    .sidemenu .closebtn{
-      position: absolute;
-      top:0px;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 32px;
-    }
-    .box{
-      position: absolute ;right: 0px;top: 0px;
-      width: 100px;height: 100px;background-color: goldenrod;
-    }
-  </style>  
-</head>
-<body>
-  <div id="mainbox" onclick="openFunction()">&#9776; Open</div>
-  <div id="menu" class="sidemenu">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-    <a href="#">Login</a>
-    <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
-  </div>
-  <script type="text/javascript">
-    function openFunction(){
-      document.getElementById("menu").style.width="300px";
-      document.getElementById("mainbox").style.marginLeft="300px";
-      document.getElementById("mainbox").innerHTML="Click on Cross Element and Close menu";
-    }
-    function closeFunction(){
-      document.getElementById("menu").style.width="0px";
-      document.getElementById("mainbox").style.marginLeft="0px";
-      document.getElementById("mainbox").innerHTML="&#9776; open";
-    }
-</script>
-  <div class="box"></div>
-  <img src="img/head.jpeg" alt='頭貼' width="700" height="400"></img>
-  <h4>Huang yu ting</h4>
-  <p>a beginner of web developer!!</p>
-  <ul>
-    <li> <a href="https://6987698766.github.io/">Home</a></li>
-    <li><a href="https://github.com/6987698766">GitHub</a></li>
-  </ul>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>Tim的部落格</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Tim的部落格</h1>
+    <p>標題</p>
+    <input type="text" id="title"/>
+    <p>內容</p>
+    <textarea id="content" row="8"></textarea>
+    <button id = "btn">發布</button> </button>
+    <div id="list">
+      <div class="article">
+        <h2>今天天氣很好</h2>
+        <p>今天天氣很好，沒有下雨。</p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
